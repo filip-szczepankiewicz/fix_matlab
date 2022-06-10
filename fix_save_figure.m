@@ -84,7 +84,7 @@ end
 
 % Print to file
 tmp_nam = [out_dir out_name];
-fn = tmp_nam;
+fn = [tmp_nam '.' out_format] ;
 
 % Here I take care of different matlab versions handling of figure handles.
 switch version
