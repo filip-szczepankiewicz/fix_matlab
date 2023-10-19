@@ -18,7 +18,7 @@ set(...
     'layer', 'top'...
 );
 
-h.FontSize = 8;
+h.FontSize = 10;
 
 h.TitleFontSizeMultiplier = 1.1;
 h.TitleFontWeight = 'normal';

@@ -19,8 +19,7 @@ do_force_w_bkg = 0;
 
 
 if (nargin < 2 || strcmp(out_dir, '') || isempty(out_dir))
-    global dir_desktop
-    out_dir = dir_desktop;
+    out_dir = path_desktop;
 end
 
 if (nargin < 3)
