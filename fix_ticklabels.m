@@ -11,10 +11,11 @@ function t = fix_ticklabels(ax_str, tno, prec, ax_h)
 % for the x and y-axes.
 
 if nargin < 1
-    fix_ticklabels('x');
-    fix_ticklabels('y');
-    try
-        fix_ticklabels('z');
+    ll = {'x', 'y', 'z'};
+    for i = 1:3
+        try
+            fix_ticklabels(ll{i});
+        end
     end
     return
 end
@@ -65,6 +66,7 @@ else
 
     tlims = get(ax_h, curr_lim);
 
+    % Estimate step size, d
     d = round(range(tlims)/tno*10^prec)/10^prec;
 
     if d == 0; d = ceil(range(tlims)/tno*10^prec)/10^prec; end
@@ -72,6 +74,12 @@ else
     tstart = round(min(tlims)*10^prec)/10^prec;
 
     t = (tstart:d:max(tlims))';
+
+    % force zero to be marked
+    if t(1)<0 && t(end)>0
+        [~, iz] = min(abs(t));
+        t = t-t(iz);
+    end
 
 end
 
