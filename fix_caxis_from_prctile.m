@@ -13,5 +13,9 @@ d = getimage;
 
 bounds = prctile(d(:), prct);
 
+if bounds(1)==bounds(2)
+    bounds(2)=bounds(2)+0.1;
+end
+
 caxis(h, bounds)
 

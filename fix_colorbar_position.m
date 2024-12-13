@@ -1,10 +1,15 @@
 function h = fix_colorbar_position(h, m, a)
 
-if nargin < 2
+if nargin < 1 || isempty(h)
+    hl = findall(gcf,'type','ColorBar');
+    h = hl(1);
+end
+
+if nargin < 2 || isempty(m)
     m = [1 1 1 1];
 end
 
-if nargin < 3
+if nargin < 3 || isempty(a)
     a = [0 0 0 0];
 end
 
