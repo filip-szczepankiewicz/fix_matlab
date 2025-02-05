@@ -42,7 +42,15 @@ if (nargin < 5)
     out_format = 'png';
     
     % Other compatible formats:
-    % png, pdf, jpeg, epsc, bmp
+    % png, pdf, jpeg, epsc, bmp, svg, meta
+end
+
+% This is a test to make vector graphics saved as pdf
+if strcmp(out_format, 'vector')
+    h_fig = gcf;
+    set(h_fig, 'Position', [0 0 imsize(1)*res(1) imsize(2)*res(1)])
+    exportgraphics(h_fig, [out_dir filesep out_name '.pdf'], 'ContentType','vector')
+    return
 end
 
 
