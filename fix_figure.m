@@ -10,3 +10,5 @@ if nargin < 2
 end
 
 set(gcf, 'color', bkg_col)
+
+fix_figure_theme

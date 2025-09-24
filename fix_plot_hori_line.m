@@ -1,19 +1,19 @@
-function hl = fix_plot_1to1_line(ha, col)
-% function hl = fix_plot_1to1_line(ha, col)
+function hl = fix_plot_hori_line(ha, yval, col)
+% function hl = fix_plot_hori_line(ha, yval, col)
 
 if nargin < 1
     ha = gca;
 end
 
 if nargin < 2
+    yval = mean(ylim(ha));
+end
+
+if nargin < 3
     col = [];
 end
 
 xl = xlim(ha);
-yl = ylim(ha);
-
-lo = min([xl(1) yl(1)]);
-hi = min([xl(2) yl(2)]);
 
 hp = ha.Parent;
 
@@ -29,5 +29,5 @@ if isempty(col)
 end
 
 hold on
-hl = plot(ha, [lo hi], [lo hi], '--', 'Color', col);
+hl = plot(ha, xl, [1 1]*yval, '--', 'Color', col);
 
