@@ -7,4 +7,4 @@ end
 
 c = linspace(0, 1, round(n/2))';
 
-cm = [c * fix_col_red; fix_col_red+c*(1-fix_col_red)];
+cm = [c * fix.color.red; fix.color.red+c*(1-fix.color.red)];

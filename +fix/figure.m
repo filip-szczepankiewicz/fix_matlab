@@ -1,5 +1,5 @@
-function h = general(h, bkg_col)
-% function h = general(h, bkg_col)
+function h = figure(h, bkg_col)
+% function h = fix.figure(h, bkg_col)
 %
 % General fixes for figure object
 
@@ -13,4 +13,4 @@ end
 
 set(gcf, 'color', bkg_col)
 
-fix_figure_theme
+fix.figure.theme
