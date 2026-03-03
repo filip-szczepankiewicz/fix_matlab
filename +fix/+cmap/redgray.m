@@ -21,4 +21,4 @@ d = linspace(1, 0, n1);
 
 a = linspace(0, 1, n2);
 
-c = [d'*fix_col_red; a'*[1 1 1]];
+c = [d'*fix.color.red; a'*[1 1 1]];
