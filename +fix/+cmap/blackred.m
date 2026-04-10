@@ -7,4 +7,4 @@ end
 
 c = linspace(0, 1, n)';
 
-cm = c * fix_col_red;
+cm = c * fix.color.red;
